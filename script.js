@@ -200,6 +200,7 @@ function stopTransaction() {
       idTag: $("#TAG").val(),
       timestamp: new Date().toISOString(),
       meterStop: parseInt($("#metervalue").val()),
+      reason: "Remote"
     },
   ]);
   _websocket.send(stpT);
@@ -345,9 +346,7 @@ $(document).ready(function () {
         status: $("#ConnectorStatus").val(),
         errorCode: "NoError",
         info: "",
-        timestamp: new Date().toISOString(),
-        vendorId: "",
-        vendorErrorCode: "",
+        timestamp: new Date().toISOString()
       },
     ]);
     _websocket.send(SN);
